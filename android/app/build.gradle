@@ -47,8 +47,8 @@ android {
 
     defaultConfig {
         applicationId "io.fuse.fusecash"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion 24
+        targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -64,6 +64,9 @@ android {
         }
     }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
         release {
             signingConfig signingConfigs.release
 
@@ -78,7 +81,10 @@ flutter {
     source '../..'
 }
 
+
 dependencies {
+    implementation project(':unityLibrary')
+
     implementation 'com.google.firebase:firebase-analytics:17.5.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:multidex:1.0.3'
