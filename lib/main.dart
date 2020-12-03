@@ -18,16 +18,17 @@ import 'package:fusecash/redux/state/store.dart';
 import 'package:fusecash/screens/route_guards.dart';
 import 'package:fusecash/screens/routes.gr.dart' as router;
 import 'package:fusecash/services.dart';
-import 'package:fusecash/simple_screen.dart';
 import 'package:fusecash/themes/app_theme.dart';
 import 'package:fusecash/themes/custom_theme.dart';
 import 'package:fusecash/utils/jwt.dart';
 import 'package:redux/redux.dart';
 
-void main1() => runApp(MaterialApp(
-      home: SimpleScreen(),
+import 'simple_screen2.dart';
+
+void main() => runApp(MaterialApp(
+      home: SimpleScreen2(),
     ));
-void main() async {
+void main1() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await DotEnv().load('environment/.env');
